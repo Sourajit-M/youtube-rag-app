@@ -35,6 +35,7 @@ results = client.query_points(
 for i, result in enumerate(results, start=1):
     print(f"\n--- RESULT {i} ---")
     print("Score:", result.score)
+    print("Video:", result.payload["video_title"])
     print("Start:", result.payload["start_time"])
     print("End:", result.payload["end_time"])
     print("Text:", result.payload["text"][:500])

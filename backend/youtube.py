@@ -1,4 +1,5 @@
 from youtube_transcript_api import YouTubeTranscriptApi
+from yt_dlp import YoutubeDL
 
 
 def get_video_id(url: str) -> str:
@@ -34,3 +35,34 @@ def get_transcript(video_id: str):
     print("Auto-generated:", transcript.is_generated)
 
     return transcript.fetch()
+
+
+def get_playlist_videos(playlist_url: str):
+    options = {
+        "quiet": True,
+        "extract_flat": True,
+        "skip_download": True,
+    }
+
+    with YoutubeDL(options) as ydl:
+        info = ydl.extract_info(
+            playlist_url,
+            download=False,
+        )
+
+    playlist_id = info.get("id")
+
+    videos = []
+
+    for entry in info.get("entries", []):
+        if not entry:
+            continue
+
+        videos.append(
+            {
+                "video_id": entry.get("id"),
+                "video_title": entry.get("title"),
+            }
+        )
+
+    return playlist_id, videos
