@@ -1,4 +1,4 @@
-﻿import os
+import os
 from pathlib import Path
 from dotenv import load_dotenv
 
@@ -21,6 +21,6 @@ DENSE_VECTOR_SIZE = 384
 SPARSE_MODEL_NAME = "Qdrant/bm25"
 
 # Chunking & Retrieval parameters
-CHUNK_WINDOW_SECONDS = 45
-CHUNK_OVERLAP_SECONDS = 10
+CHUNK_WINDOW_SECONDS = 75
+CHUNK_OVERLAP_SECONDS = 20
 TOP_K_DEFAULT = 6

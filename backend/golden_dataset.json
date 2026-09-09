@@ -1,0 +1,107 @@
+[
+  {
+    "id": "eval-1",
+    "video_source": "Kunal Kushwaha - OOP Principles (Hindi)",
+    "question": "What is runtime polymorphism and how is it achieved?",
+    "ground_truth": "Runtime polymorphism (dynamic polymorphism) is resolved during program execution. It is achieved through method overriding, where a subclass defines a method already declared in its superclass with the exact same signature.",
+    "expected_topics": ["runtime polymorphism", "method overriding", "dynamic", "subclass", "superclass"]
+  },
+  {
+    "id": "eval-2",
+    "video_source": "Kunal Kushwaha - OOP Principles (Hindi)",
+    "question": "What is method overriding and how it is performed with an example.",
+    "ground_truth": "Method overriding occurs when a child class provides its own implementation of a method declared in its parent class. In the video, this is demonstrated using a parent Shape class with an area() method, and child classes Circle and Square overriding area() to compute their specific area.",
+    "expected_topics": ["method overriding", "Shape", "Circle", "Square", "area", "same signature"]
+  },
+  {
+    "id": "eval-3",
+    "video_source": "Kunal Kushwaha - OOP Principles (Hindi)",
+    "question": "Can static methods be overridden in Java?",
+    "ground_truth": "No, static methods cannot be overridden because static methods are bound to the class at compile time rather than object instances. Defining the same static method in a subclass results in method hiding.",
+    "expected_topics": ["static method", "cannot override", "class level", "method hiding"]
+  },
+  {
+    "id": "eval-4",
+    "video_source": "Kunal Kushwaha - OOP Principles (Hindi)",
+    "question": "What is the difference between method overloading and method overriding?",
+    "ground_truth": "Method overloading occurs at compile-time within the same class using different parameter lists. Method overriding occurs at runtime across inheritance hierarchies where the method signatures are identical.",
+    "expected_topics": ["compile time", "runtime", "overloading", "overriding", "parameters"]
+  },
+  {
+    "id": "eval-5",
+    "video_source": "Kunal Kushwaha - OOP Principles (Hindi)",
+    "question": "What is the purpose of the super keyword in inheritance?",
+    "ground_truth": "The super keyword refers directly to the immediate parent or superclass, allowing access to the parent class constructor, methods, and member variables.",
+    "expected_topics": ["super", "parent class", "constructor", "base class"]
+  },
+  {
+    "id": "eval-6",
+    "video_source": "3Blue1Brown - Neural Networks (English)",
+    "question": "What is a neuron in a neural network according to 3Blue1Brown?",
+    "ground_truth": "A neuron is a container that holds a number called an activation, specifically a number between 0 and 1 representing feature intensity or grayscale pixel value.",
+    "expected_topics": ["neuron", "activation", "number between 0 and 1"]
+  },
+  {
+    "id": "eval-7",
+    "video_source": "3Blue1Brown - Neural Networks (English)",
+    "question": "Why does the input layer for the MNIST handwritten digit network have 784 neurons?",
+    "ground_truth": "The MNIST images are 28 by 28 pixels, which equals 784 pixels. Each pixel intensity corresponds to one neuron in the input layer.",
+    "expected_topics": ["28 by 28", "784", "pixels", "MNIST"]
+  },
+  {
+    "id": "eval-8",
+    "video_source": "3Blue1Brown - Neural Networks (English)",
+    "question": "What is the role of weights and biases in a neural network?",
+    "ground_truth": "Weights determine how strongly one neuron influences the next in the weighted sum, while biases dictate how high that weighted sum must be before the neuron becomes meaningfully active.",
+    "expected_topics": ["weights", "biases", "weighted sum", "influence", "active"]
+  },
+  {
+    "id": "eval-9",
+    "video_source": "3Blue1Brown - Neural Networks (English)",
+    "question": "What does the sigmoid activation function do?",
+    "ground_truth": "The sigmoid function squashes any real-valued weighted sum into a value strictly between 0 and 1.",
+    "expected_topics": ["sigmoid", "squashes", "between 0 and 1"]
+  },
+  {
+    "id": "eval-10",
+    "video_source": "Pratyush - Prim's Algorithm (Hindi)",
+    "question": "What is a Minimum Spanning Tree (MST)?",
+    "ground_truth": "A Minimum Spanning Tree of a connected, undirected weighted graph is a subgraph that connects all V vertices using exactly V - 1 edges without any cycles, such that the total sum of edge weights is minimized.",
+    "expected_topics": ["minimum spanning tree", "V - 1 edges", "all vertices", "no cycles", "minimum weight"]
+  },
+  {
+    "id": "eval-11",
+    "video_source": "Pratyush - Prim's Algorithm (Hindi)",
+    "question": "How does Prim's algorithm work to find a Minimum Spanning Tree?",
+    "ground_truth": "Prim's algorithm is a greedy algorithm that starts from an arbitrary source vertex and grows the spanning tree one vertex at a time by always picking the minimum weight edge that connects a visited vertex to an unvisited vertex.",
+    "expected_topics": ["greedy", "minimum weight edge", "visited", "unvisited", "grows tree"]
+  },
+  {
+    "id": "eval-12",
+    "video_source": "Pratyush - Prim's Algorithm (Hindi)",
+    "question": "What data structure is used in Prim's algorithm to efficiently select the minimum weight edge?",
+    "ground_truth": "A Min-Heap or Priority Queue is used to store edges or keys, allowing the algorithm to efficiently extract the minimum weight edge connecting to unvisited vertices.",
+    "expected_topics": ["priority queue", "min heap", "minimum weight edge"]
+  },
+  {
+    "id": "eval-13",
+    "video_source": "Pratyush - Prim's Algorithm (Hindi)",
+    "question": "Why does a spanning tree with V vertices always contain exactly V - 1 edges?",
+    "ground_truth": "To connect all V vertices with the minimum number of connections and without forming any cycles, exactly V - 1 edges are required. Adding any extra edge would create a cycle.",
+    "expected_topics": ["V - 1 edges", "connects all vertices", "no cycle", "tree property"]
+  },
+  {
+    "id": "eval-14",
+    "video_source": "Negative Test (Out of Domain)",
+    "question": "What is database sharding and horizontal partitioning in PostgreSQL?",
+    "ground_truth": "This topic is not covered in the ingested video(s).",
+    "expected_topics": ["not covered"]
+  },
+  {
+    "id": "eval-15",
+    "video_source": "Negative Test (Out of Domain)",
+    "question": "How does quantum key distribution work in cryptography?",
+    "ground_truth": "This topic is not covered in the ingested video(s).",
+    "expected_topics": ["not covered"]
+  }
+]

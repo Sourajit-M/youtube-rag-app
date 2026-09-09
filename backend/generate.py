@@ -41,10 +41,11 @@ def generate_answer(query: str) -> dict:
         temperature=0.2,
     )
 
-    # 4. Return answer and formatted citations
+    # 4. Return answer, formatted citations, and full context excerpts
     return {
         "query": query,
         "answer": response.choices[0].message.content.strip(),
+        "context_excerpts": [h["text"] for h in hits],
         "citations": [
             {
                 "video_id": h["video_id"],
@@ -52,7 +53,8 @@ def generate_answer(query: str) -> dict:
                 "start_time": h["start_time"],
                 "timestamp_formatted": h["timestamp_formatted"],
                 "youtube_url": h["youtube_url"],
-                "snippet": h["text"][:150] + "...",
+                "context": h["text"],
+                "snippet": h["text"][:150] + ("..." if len(h["text"]) > 150 else ""),
             }
             for h in hits
         ],

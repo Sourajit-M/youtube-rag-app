@@ -47,7 +47,7 @@ def hybrid_search(
     sparse_vec = list(sparse_model.embed([query]))[0]
 
     # 2. Server-side Reciprocal Rank Fusion (RRF) in Qdrant Cloud
-    prefetch_limit = max(top_k * 3, 10)
+    prefetch_limit = max(top_k * 4, 25)
     response = client.query_points(
         collection_name=COLLECTION_NAME,
         prefetch=[

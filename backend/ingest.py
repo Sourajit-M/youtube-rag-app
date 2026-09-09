@@ -194,12 +194,13 @@ def chunk_transcript(
     return chunks
 
 
-def translate_chunks_to_english(raw_chunks: List[Dict], batch_size: int = 20) -> List[str]:
+def translate_chunks_to_english(raw_chunks: List[Dict], source_lang: str = "auto", batch_size: int = 20) -> List[str]:
     """Translates chunks to English in batches using deep-translator."""
     texts = [c["text"].strip() for c in raw_chunks]
     translated_all = []
+    translator = GoogleTranslator(source=source_lang if source_lang else "auto", target="en")
 
-    print(f"[Translate] Translating {len(texts)} chunks to English...")
+    print(f"[Translate] Translating {len(texts)} chunks ({source_lang} -> en)...")
     for i in range(0, len(texts), batch_size):
         batch = texts[i : i + batch_size]
         try:
@@ -241,7 +242,7 @@ def ingest_single_video(
 
     # Translate if non-English
     if lang != "en":
-        english_texts = translate_chunks_to_english(chunks)
+        english_texts = translate_chunks_to_english(chunks, source_lang=lang)
     else:
         english_texts = [c["text"].strip() for c in chunks]
 
