@@ -32,6 +32,7 @@ class IngestRequest(BaseModel):
 
 class QueryRequest(BaseModel):
     query: str
+    chat_history: Optional[list] = []
 
 
 @app.get("/api/health")
@@ -72,15 +73,14 @@ def ingest_endpoint(payload: IngestRequest):
 
 @app.post("/api/query")
 def query_endpoint(payload: QueryRequest):
-    """
-    Answers a question grounded in the indexed transcripts using Qdrant Hybrid Search + Groq.
-    Returns the answer and timestamp citations.
-    """
     if not payload.query or not payload.query.strip():
         raise HTTPException(status_code=400, detail="Query string cannot be empty.")
 
     try:
-        response = generate_answer(query=payload.query.strip())
+        response = generate_answer(
+            query=payload.query.strip(),
+            chat_history=payload.chat_history,
+        )
         return response
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Query failed: {str(e)}")
